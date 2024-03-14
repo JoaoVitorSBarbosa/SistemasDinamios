@@ -92,14 +92,20 @@ for linha = 1:sizeArr2(1)
 end
 
 %% Ex. 02
-freq = 3; % freq em Hz
+t=-10:0.01:10;
+y = exp(-2 * t).* sin(3 * t);
+plot(t,y);
 
 
-for t = -10:10
-    amplitude  = exp(2 * t);
-    func = amplitude * (sen(t) / 3);
-    
-end
 %% Ex. 03
+t=-10:0.1:10;
+x = cos(t).* sin(20*t);
+plot(t,x);
+
 %% Ex. 04 (a)
+A = '';
+B = '';
+C = '';
+
+    
 %% Ex. 04 (b)
