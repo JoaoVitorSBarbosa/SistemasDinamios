@@ -93,19 +93,47 @@ end
 
 %% Ex. 02
 t=-10:0.01:10;
-y = exp(-2 * t).* sin(3 * t);
+y = exp(-2 * t).* sin(2 * pi * 3 * t);
 plot(t,y);
 
+xlabel('Tempo (s)');
+ylabel('Amplitude');
 
 %% Ex. 03
-t=-10:0.1:10;
+t=-10:0.01:10;
 x = cos(t).* sin(20*t);
 plot(t,x);
 
+xlabel('Tempo (s)');
+ylabel('Amplitude');
+
 %% Ex. 04 (a)
-A = '';
-B = '';
-C = '';
+
+[R, P, K] = residue([6 6],[1 4.59 0.58 0]);
+
+disp('R');
+disp(R);
+disp(' ');
+disp('P');
+disp(P);
+disp(' ');
+disp('K');
+disp(K);
+disp(' ');
+
 
     
+
 %% Ex. 04 (b)
+
+[R, P, K] = residue([1 2 3],[1 3 3 1]);
+
+disp('R');
+disp(R);
+disp(' ');
+disp('P');
+disp(P);
+disp(' ');
+disp('K');
+disp(K);
+disp(' ');
