@@ -1,7 +1,7 @@
-%% Laboratório de Sistemas dinâmicos
-% Prática 02
+%% LaboratÃ³rio de Sistemas dinÃ¢micos
+% PrÃ¡tica 02
 % Data: 25/03/2024
-% Autores: Ana Clara Gomes & João Vitor Barbosa
+% Autores: Ana Clara Gomes & JoÃ£o Vitor Barbosa
 
 
 %%Limpar Workspace
@@ -10,7 +10,7 @@ close all;
 clc;
 
 %%
-% Script Prática 2
+% Script PrÃ¡tica 2
 
 %% Ex. 01
 
@@ -69,7 +69,7 @@ ylabel('x[n]');
 
 %% Ex. 03
 
-y = zeros(1,11);
+y = zeros(1,10);
 y(1) = 10;
 y(2) = 22;
 
@@ -81,4 +81,14 @@ disp(y);
 
 
 %% Ex. 04
+
+y = zeros(1,10);
+y(1) = 1;
+y(2) = 2;
+
+for i = 3:10
+   y(i) = y(i -1) - (0.24 * y(i - 2)) + (i) - (2 * (i - 1));  
+end
+
+disp(y);
 
