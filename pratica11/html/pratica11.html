@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>pratica11</title>
+<meta name="generator" content="MATLAB 24.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2024-08-25">
+<meta name="DC.source" content="pratica11.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Laborat&oacute;rio de Sistemas Din&acirc;micos</a>
+</li>
+<li>
+<a href="#3">Exercicio 1</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Laborat&oacute;rio de Sistemas Din&acirc;micos</h2>
+<p>Pr&aacute;tica 11 Data: 25/08/2024 Autores: Ana Clara Gomes &amp; Jo&atilde;o Vitor Barbosa</p>
+<pre class="codeinput">
+<span class="comment">% Limpar Workspace</span>
+clear <span class="string">all</span>;
+close <span class="string">all</span>;
+clc;
+</pre>
+<p>Script Pr&aacute;tica 11</p>
+<h2 id="3">Exercicio 1</h2>
+<pre class="codeinput">dados = load(<span class="string">'ensaio_prbs.txt'</span>);
+t = dados(:,1);
+u = dados(:,2);
+y = dados(:,3);
+
+yd = y(1:4:end);
+ud = u(1:4:end);
+
+<span class="comment">% Estima&ccedil;&atilde;o para 1 atraso</span>
+Y = yd(2:end);
+X = [yd(1:end-1), ud(1:end-1)];
+
+teta = pinv(X) * Y;
+A = teta(1);
+B = teta(2);
+
+ym1 = zeros(size(y));  <span class="comment">% Inicializa vetor de sa&iacute;da modelada</span>
+ym1(1) = y(1);
+<span class="keyword">for</span> k = 2:numel(y)
+    ym1(k) = A * ym1(k-1) + B * u(k-1);
+<span class="keyword">end</span>
+
+<span class="comment">% Gr&aacute;fico separado para 1 atraso</span>
+figure;
+plot(t, y, <span class="string">'b'</span>); grid <span class="string">on</span>; hold <span class="string">on</span>;
+plot(t, ym1, <span class="string">'r'</span>); grid <span class="string">on</span>;
+title(<span class="string">'Sa&iacute;da Real vs Modelada (1 atraso)'</span>);
+xlabel(<span class="string">'Tempo'</span>);
+ylabel(<span class="string">'Sa&iacute;da'</span>);
+legend(<span class="string">'Sa&iacute;da Real'</span>, <span class="string">'Modelo 1 atraso'</span>);
+err1 = immse(y, ym1);
+fprintf(<span class="string">'Erro M&eacute;dio Quadr&aacute;tico para 1 atraso: %f\n'</span>, err1);
+
+<span class="comment">% Estima&ccedil;&atilde;o para 2 atrasos</span>
+Y = yd(3:end);
+X = [yd(1:end-2), yd(2:end-1), ud(1:end-2), ud(2:end-1)];
+
+teta2 = pinv(X) * Y;
+A2 = teta2(1);
+B2 = teta2(2);
+C2 = teta2(3);
+D2 = teta2(4);
+
+ym2 = zeros(size(y));  <span class="comment">% Inicializa vetor de sa&iacute;da modelada</span>
+ym2(1) = y(1);
+ym2(2) = y(2);
+<span class="keyword">for</span> k = 3:numel(y)
+    ym2(k) = A2 * ym2(k-1) + B2 * ym2(k-2) + C2 * u(k-1) + D2 * u(k-2);
+<span class="keyword">end</span>
+
+<span class="comment">% Gr&aacute;fico separado para 2 atrasos</span>
+figure;
+plot(t, y, <span class="string">'b'</span>); grid <span class="string">on</span>; hold <span class="string">on</span>;
+plot(t, ym2, <span class="string">'g'</span>); grid <span class="string">on</span>;
+title(<span class="string">'Sa&iacute;da Real vs Modelada (2 atrasos)'</span>);
+xlabel(<span class="string">'Tempo'</span>);
+ylabel(<span class="string">'Sa&iacute;da'</span>);
+legend(<span class="string">'Sa&iacute;da Real'</span>, <span class="string">'Modelo 2 atrasos'</span>);
+err2 = immse(y, ym2);
+fprintf(<span class="string">'Erro M&eacute;dio Quadr&aacute;tico para 2 atrasos: %f\n'</span>, err2);
+
+<span class="comment">% Gr&aacute;fico de compara&ccedil;&atilde;o</span>
+figure;
+plot(t, y, <span class="string">'b'</span>); grid <span class="string">on</span>; hold <span class="string">on</span>;
+plot(t, ym1, <span class="string">'r'</span>);
+plot(t, ym2, <span class="string">'g'</span>);
+title(<span class="string">'Compara&ccedil;&atilde;o entre Sa&iacute;da Real e Modelos'</span>);
+xlabel(<span class="string">'Tempo'</span>);
+ylabel(<span class="string">'Sa&iacute;da'</span>);
+legend(<span class="string">'Sa&iacute;da Real'</span>, <span class="string">'Modelo 1 atraso'</span>, <span class="string">'Modelo 2 atrasos'</span>);
+</pre>
+<pre class="codeoutput error">Error using load
+Unable to find file or directory 'ensaio_prbs.txt'.
+
+Error in pratica11 (line 15)
+dados = load('ensaio_prbs.txt');
+</pre>
+<p class="footer">
+<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2024a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Laboratório de Sistemas Dinâmicos
+% Prática 11
+% Data: 25/08/2024
+% Autores: Ana Clara Gomes & João Vitor Barbosa
+
+% Limpar Workspace
+clear all;
+close all;
+clc;
+
+%%
+% Script Prática 11
+
+%% Exercicio 1 
+dados = load('ensaio_prbs.txt');
+t = dados(:,1);
+u = dados(:,2);
+y = dados(:,3);
+
+yd = y(1:4:end);
+ud = u(1:4:end);
+
+% Estimação para 1 atraso
+Y = yd(2:end);
+X = [yd(1:end-1), ud(1:end-1)];
+
+teta = pinv(X) * Y;
+A = teta(1);
+B = teta(2);
+
+ym1 = zeros(size(y));  % Inicializa vetor de saída modelada
+ym1(1) = y(1);
+for k = 2:numel(y)
+    ym1(k) = A * ym1(k-1) + B * u(k-1);
+end
+
+% Gráfico separado para 1 atraso
+figure;
+plot(t, y, 'b'); grid on; hold on;
+plot(t, ym1, 'r'); grid on;
+title('Saída Real vs Modelada (1 atraso)');
+xlabel('Tempo');
+ylabel('Saída');
+legend('Saída Real', 'Modelo 1 atraso');
+err1 = immse(y, ym1);
+fprintf('Erro Médio Quadrático para 1 atraso: %f\n', err1);
+
+% Estimação para 2 atrasos
+Y = yd(3:end);
+X = [yd(1:end-2), yd(2:end-1), ud(1:end-2), ud(2:end-1)];
+
+teta2 = pinv(X) * Y;
+A2 = teta2(1);
+B2 = teta2(2);
+C2 = teta2(3);
+D2 = teta2(4);
+
+ym2 = zeros(size(y));  % Inicializa vetor de saída modelada
+ym2(1) = y(1);
+ym2(2) = y(2);
+for k = 3:numel(y)
+    ym2(k) = A2 * ym2(k-1) + B2 * ym2(k-2) + C2 * u(k-1) + D2 * u(k-2);
+end
+
+% Gráfico separado para 2 atrasos
+figure;
+plot(t, y, 'b'); grid on; hold on;
+plot(t, ym2, 'g'); grid on;
+title('Saída Real vs Modelada (2 atrasos)');
+xlabel('Tempo');
+ylabel('Saída');
+legend('Saída Real', 'Modelo 2 atrasos');
+err2 = immse(y, ym2);
+fprintf('Erro Médio Quadrático para 2 atrasos: %f\n', err2);
+
+% Gráfico de comparação
+figure;
+plot(t, y, 'b'); grid on; hold on;
+plot(t, ym1, 'r'); 
+plot(t, ym2, 'g'); 
+title('Comparação entre Saída Real e Modelos');
+xlabel('Tempo');
+ylabel('Saída');
+legend('Saída Real', 'Modelo 1 atraso', 'Modelo 2 atrasos');
+
+##### SOURCE END #####
+-->
+</body>
+</html>
